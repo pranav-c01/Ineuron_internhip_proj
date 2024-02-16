@@ -15,9 +15,6 @@ install the req
 ```bash
 pip install -r requirements.txt
 ```
-download the data from 
-
-https://drive.google.com/drive/folders/18zqQiCJVgF7uzXgfbIJ-04zgz1ItNfF5?usp=sharing
 
 ```bash
 git init
@@ -30,7 +27,7 @@ dvc add data_given/mushrooms.csv
 
 dvc repro -> to run the pipeline
 dvc metrics show -> to see params.json and metrics.json
-dvc metrics diff -> to see difference old and new metrics (accuracy , rmse, etc)
+dvc metrics diff -> to see difference old and new metrics 
 ```
 ```bash
 git add .
