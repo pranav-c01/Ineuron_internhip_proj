@@ -1,0 +1,15 @@
+# local package install
+# -e .
+
+# third party packages
+dvc
+dvc[gdrive]
+scikit-learn
+pandas
+pytest
+tox
+flake8
+flask
+gunicorn
+PyYAML
+mlflow

@@ -1,0 +1,38 @@
+base:
+  project: Mushroom-classififcation-project
+  random_state: 42
+  target_col: class
+
+data_source:
+  s3_source: data_given/mushrooms.csv
+
+load_data:
+  raw_dataset_csv: data/raw/mushrooms.csv
+
+split_data:
+  preprocessed_data_path: data/processed/processed_final.csv
+  train_path: data/processed/train_mushrooms.csv
+  test_path: data/processed/test_mushrooms.csv
+  test_size: 0.2
+
+estimators:
+  Adaboost:
+    params:
+      n_estimators: 50
+      learning_rate: 1
+      algorithm: SAMME
+
+model_dir: saved_models
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
+
+webapp_model_dir: prediction_service/model/model.joblib
+
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: Adaboost Classfication
+  run_name: mlops_r1
+  registered_model_name: mushrooms_classif_model
+  remote_server_uri: http://localhost:1234
