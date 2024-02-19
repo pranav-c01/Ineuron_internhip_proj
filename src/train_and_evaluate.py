@@ -3,6 +3,7 @@
 # save the metrices, params
 import os
 import warnings
+import datetime
 import sys
 import pandas as pd
 import numpy as np
@@ -55,10 +56,10 @@ def train_and_evaluate(config_path):
 
     with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlops_run:
         lr = AdaBoostClassifier(
-            n_estimators=n_estimators, 
-            learning_rate=learning_rate,
-            algorithm=algorithm, 
-            random_state=random_state)
+             n_estimators=n_estimators, 
+             learning_rate=learning_rate,
+             algorithm=algorithm, 
+             random_state=random_state)
         lr.fit(train_x, train_y)
 
         predicted_qualities = lr.predict(test_x)
@@ -75,7 +76,7 @@ def train_and_evaluate(config_path):
         mlflow.log_metric("f1_score_", f1_score_)
 
         tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
-
+#
         if tracking_url_type_store != "file":
             mlflow.sklearn.log_model(
                 lr, 
@@ -83,6 +84,19 @@ def train_and_evaluate(config_path):
                 registered_model_name=mlflow_config["registered_model_name"])
         else:
             mlflow.sklearn.load_model(lr, "model")
+
+
+#    lr = AdaBoostClassifier(
+     #        n_estimators=n_estimators, 
+   #          learning_rate=learning_rate,
+  #           algorithm=algorithm, 
+    #         random_state=random_state)
+ #   lr.fit(train_x, train_y)
+
+
+#    joblib.dump(lr,os.path.join(model_dir,"model.joblib"))
+
+
  
 
 

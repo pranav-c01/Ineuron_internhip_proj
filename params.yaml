@@ -24,6 +24,8 @@ estimators:
 
 model_dir: saved_models
 
+ord_encoder_path: saved_models/ord_enc.joblib
+
 reports:
   params: report/params.json
   scores: report/scores.json

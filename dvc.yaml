@@ -15,6 +15,7 @@ stages:
     - data/raw/mushrooms.csv
     outs: 
     - data/processed/processed_final.csv
+    - saved_models/ord_enc.joblib
 
   split_data:
     cmd: python src/split_data.py --config=params.yaml
@@ -35,14 +36,15 @@ stages:
     - estimators.Adaboost.params.n_estimators
     - estimators.Adaboost.params.learning_rate
     - estimators.Adaboost.params.algorithm
+    
+    # outs:
+    # - saved_models/model.joblib
 
 #    metrics:
 #    - report/scores.json:
 #        cache: false
 #    - report/params.json:
 #        cache: false
-#    outs:
-#    - saved_models/model.joblib
 
   log_production_model:
     cmd: python src/log_production_model.py --config=params.yaml

@@ -23,9 +23,9 @@ def log_production_model(config_path):
     mlflow.set_tracking_uri(remote_server_uri)
     
 #   all_experiments = [exp.experiment_id for exp in mlflow.search_experiments()]
-    runs = mlflow.search_runs(experiment_ids='1')
-    lowest = runs["metrics.mae"].sort_values(ascending=True)[0]
-    lowest_run_id = runs[runs["metrics.mae"] == lowest]["run_id"][0]
+    runs = mlflow.search_runs(experiment_ids='2')
+    lowest = runs["metrics.f1_score_"].sort_values(ascending=False)[0]
+    lowest_run_id = runs[runs["metrics.f1_score_"] == lowest]["run_id"][0]
     
 
     client = MlflowClient()

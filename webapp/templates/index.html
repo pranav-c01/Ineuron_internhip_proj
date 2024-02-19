@@ -50,28 +50,263 @@ Mushroom Classification
                                     <p class="mb-2">Enter the details as indicated:</p>
                                 </blockquote>
                             </label>
-                            <textarea class="form-control" name="fixed_acidity" rows="1"
-                                placeholder="fixed acidity expected range 4.6 to 15.9"></textarea>
-                            <textarea class="form-control" name="volatile_acidity" rows="1"
-                                placeholder="volatile acidity expected range 0.12 to 1.58"></textarea>
-                            <textarea class="form-control" name="citric_acid" rows="1"
-                                placeholder="citric acid expected range 0.0 to 1.0"></textarea>
-                            <textarea class="form-control" name="residual_sugar" rows="1"
-                                placeholder="residual sugar expected range 0.9 to 15.5"></textarea>
-                            <textarea class="form-control" name="chlorides" rows="1" 
-                                placeholder="chlorides expected range 0.012 to 0.611"></textarea>
-                            <textarea class="form-control" name="free_sulfur_dioxide" rows="1"
-                                placeholder="free sulfur dioxide expected range 1.0 to 72.0"></textarea>
-                            <textarea class="form-control" name="total_sulfur_dioxide" rows="1"
-                                placeholder="total sulfur dioxide expected range 6.0 to 289.0"></textarea>
-                            <textarea class="form-control" name="density" rows="1" 
-                                placeholder="density expected range 0.99007 to 1.00369"></textarea>
-                            <textarea class="form-control" name="pH" rows="1" 
-                                placeholder="pH expected range 2.74 to 4.01"></textarea>
-                            <textarea class="form-control" name="sulphates" rows="1" 
-                                placeholder="sulphates expected range 0.33 to 2.0"></textarea>
-                            <textarea class="form-control" name="alcohol" rows="1" 
-                                placeholder="alcohol expected range 8.4 to 14.9"></textarea>
+                            <!-- Cap Shape -->
+                            <label for="cap-shape">Cap Shape:</label>
+                            <select name="cap-shape">
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                            <option value="x">x</option>
+                            <option value="f">f</option>
+                            <option value="k">k</option>
+                            <option value="s" selected>s</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Cap Surface -->
+                            <label for="cap-surface">Cap Surface:</label>
+                            <select name="cap-surface">
+                            <option value="f">f</option>
+                            <option value="g">g</option>
+                            <option value="y">y</option>
+                            <option value="s" selected>s</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Cap Color -->
+                            <label for="cap-color">Cap Color:</label>
+                            <select name="cap-color">
+                            <option value="n">n</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                            <option value="g">g</option>
+                            <option value="r">r</option>
+                            <option value="p">p</option>
+                            <option value="u">u</option>
+                            <option value="e">e</option>
+                            <option value="w">w</option>
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Bruises -->
+                            <label for="bruises">Bruises:</label>
+                            <select name="bruises">
+                            <option value="t">t</option>
+                            <option value="f" selected>f</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Odor -->
+                            <label for="odor">Odor:</label>
+                            <select name="odor">
+                            <option value="a">almond</option>
+                            <option value="l">anise</option>
+                            <option value="c">creosote</option>
+                            <option value="y">fishy</option>
+                            <option value="f">foul</option>
+                            <option value="m">musty</option>
+                            <option value="n">none</option>
+                            <option value="p">pungent</option>
+                            <option value="s" selected>spicy</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Gill Attachment -->
+                            <label for="gill-attachment">Gill Attachment:</label>
+                            <select name="gill-attachment">
+                            <option value="a">a</option>
+                            <option value="d">d</option>
+                            <option value="f" selected>f</option>
+                            <option value="n">n</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Gill Spacing -->
+                            <label for="gill-spacing">Gill Spacing:</label>
+                            <select name="gill-spacing">
+                            <option value="c">c</option>
+                            <option value="w" selected>w</option>
+                            <option value="d">d</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Gill Size -->
+                            <label for="gill-size">Gill Size:</label>
+                            <select name="gill-size">
+                            <option value="b" selected>b</option>
+                            <option value="n">n</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Gill Color -->
+                            <label for="gill-color">Gill Color:</label>
+                            <select name="gill-color">
+                            <option value="k">k</option>
+                            <option value="n">n</option>
+                            <option value="b">b</option>
+                            <option value="h">h</option>
+                            <option value="g">g</option>
+                            <option value="r">r</option>
+                            <option value="o">o</option>
+                            <option value="p">p</option>
+                            <option value="u">u</option>
+                            <option value="e">e</option>
+                            <option value="w">w</option>
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Stalk Shape -->
+                            <label for="stalk-shape">Stalk Shape:</label>
+                            <select name="stalk-shape">
+                            <option value="e">e</option>
+                            <option value="t" selected>t</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Stalk Root -->
+                            <label for="stalk-root">Stalk Root:</label>
+                            <select name="stalk-root">
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                            <option value="u">u</option>
+                            <option value="e">e</option>
+                            <option value="z">z</option>
+                            <option value="?" selected>?</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Stalk Surface Above Ring -->
+                            <label for="stalk-surface-above-ring">Stalk Surface Above Ring:</label>
+                            <select name="stalk-surface-above-ring">
+                            <option value="f">f</option>
+                            <option value="y">y</option>
+                            <option value="k">k</option>
+                            <option value="s" selected>s</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Stalk Surface Below Ring -->
+                            <label for="stalk-surface-below-ring">Stalk Surface Below Ring:</label>
+                            <select name="stalk-surface-below-ring">
+                            <option value="f">f</option>
+                            <option value="y">y</option>
+                            <option value="k">k</option>
+                            <option value="s" selected>s</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Stalk Color Above Ring -->
+                            <label for="stalk-color-above-ring">Stalk Color Above Ring:</label>
+                            <select name="stalk-color-above-ring">
+                            <option value="n">n</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                            <option value="g">g</option>
+                            <option value="o">o</option>
+                            <option value="p">p</option>
+                            <option value="e">e</option>
+                            <option value="w">w</option>
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Stalk Color Below Ring -->
+                            <label for="stalk-color-below-ring">Stalk Color Below Ring:</label>
+                            <select name="stalk-color-below-ring">
+                            <option value="n">n</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                            <option value="g">g</option>
+                            <option value="o">o</option>
+                            <option value="p">p</option>
+                            <option value="e">e</option>
+                            <option value="w">w</option>  
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Veil Type -->
+                            <label for="veil-type">Veil Type:</label>
+                            <select name="veil-type">
+                            <option value="p">p</option>
+                            <option value="u" selected>u</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Veil Color -->
+                            <label for="veil-color">Veil Color:</label>
+                            <select name="veil-color">
+                            <option value="n">n</option>
+                            <option value="o">o</option>
+                            <option value="w">w</option>
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Ring Number -->
+                            <label for="ring-number">Ring Number:</label>
+                            <select name="ring-number">
+                            <option value="n">n</option>
+                            <option value="o" selected>o</option>
+                            <option value="t">t</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Ring Type -->
+                            <label for="ring-type">Ring Type:</label>
+                            <select name="ring-type">
+                            <option value="c">c</option>
+                            <option value="e">e</option>
+                            <option value="f">f</option>
+                            <option value="l">l</option>
+                            <option value="n">n</option>
+                            <option value="p">p</option>
+                            <option value="s">s</option>
+                            <option value="z" selected>z</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Spore Print Color -->
+                            <label for="spore-print-color">Spore Print Color:</label>
+                            <select name="spore-print-color">
+                            <option value="k">k</option>
+                            <option value="n">n</option>
+                            <option value="b">b</option>
+                            <option value="h">h</option>
+                            <option value="r">r</option>
+                            <option value="o">o</option>
+                            <option value="u">u</option>
+                            <option value="w">w</option>
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Population -->
+                            <label for="population">Population:</label>
+                            <select name="population">
+                            <option value="a">a</option>
+                            <option value="c">c</option>
+                            <option value="n">n</option>
+                            <option value="s">s</option>
+                            <option value="v">v</option>
+                            <option value="y" selected>y</option>
+                            </select>
+                            <br><br>
+
+                            <!-- Habitat -->
+                            <label for="habitat">Habitat:</label>
+                            <select name="habitat">
+                            <option value="g">g</option>
+                            <option value="l">l</option>
+                            <option value="m">m</option>
+                            <option value="p">p</option>
+                            <option value="u">u</option>
+                            <option value="w" selected>w</option>
+                            <option value="d">d</option>
+                            </select>
+                            <br><br>
+                                
 
                         </div>
 

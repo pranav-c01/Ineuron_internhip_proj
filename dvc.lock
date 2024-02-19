@@ -1,0 +1,73 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/mushrooms.csv
+      md5: 20e36f0bcc0fec359eb394ee947237dd
+      size: 374003
+    - path: src/get_data.py
+      md5: db7730736da9e3274083bc90eccf7000
+      size: 656
+    - path: src/load_data.py
+      md5: bf9ea6e0fcd2ef3899ba4c7d8292dec1
+      size: 648
+    outs:
+    - path: data/raw/mushrooms.csv
+      md5: fb58011e88ab87005b0113a542ab278e
+      size: 382129
+  preprocessing:
+    cmd: python src/preprocessing.py --config=params.yaml
+    deps:
+    - path: data/raw/mushrooms.csv
+      md5: fb58011e88ab87005b0113a542ab278e
+      size: 382129
+    - path: src/preprocessing.py
+      md5: 0913e554c445c5e94e44cca9e53d6d94
+      size: 2354
+    outs:
+    - path: data/processed/processed_final.csv
+      md5: 32eeb8201b0b0fbdc972b37b243f4fba
+      size: 594580
+    - path: saved_models/ord_enc.joblib
+      md5: f4195d99277c5e23435c459d254bd039
+      size: 7414
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/processed/processed_final.csv
+      md5: 32eeb8201b0b0fbdc972b37b243f4fba
+      size: 594580
+    - path: src/split_data.py
+      md5: 9120bf60d9005408dbbd418f70407641
+      size: 1098
+    outs:
+    - path: data/processed/test_mushrooms.csv
+      md5: d445993747e0b1cc663d00318577174b
+      size: 119106
+    - path: data/processed/train_mushrooms.csv
+      md5: 0eb6ccff48db428678f457cbbff3e3f2
+      size: 475714
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_mushrooms.csv
+      md5: d445993747e0b1cc663d00318577174b
+      size: 119106
+    - path: data/processed/train_mushrooms.csv
+      md5: 0eb6ccff48db428678f457cbbff3e3f2
+      size: 475714
+    - path: src/train_and_evaluate.py
+      md5: 5104d0e97fd4e9dbac9b79be50a9c62e
+      size: 3438
+    params:
+      params.yaml:
+        estimators.Adaboost.params.algorithm: SAMME
+        estimators.Adaboost.params.learning_rate: 1
+        estimators.Adaboost.params.n_estimators: 50
+  log_production_model:
+    cmd: python src/log_production_model.py --config=params.yaml
+    deps:
+    - path: src/log_production_model.py
+      md5: 6cff324c97506f7c720bca91cf13f6e8
+      size: 1918
