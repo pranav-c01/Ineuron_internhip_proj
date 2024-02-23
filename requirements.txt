@@ -4,6 +4,7 @@
 # third party packages
 dvc
 dvc[gdrive]
+urllib3==1.26.6
 scikit-learn
 pandas
 pytest
