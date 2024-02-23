@@ -63,8 +63,8 @@ stages:
     params:
       params.yaml:
         estimators.Adaboost.params.algorithm: SAMME
-        estimators.Adaboost.params.learning_rate: 1
-        estimators.Adaboost.params.n_estimators: 50
+        estimators.Adaboost.params.learning_rate: 0.1
+        estimators.Adaboost.params.n_estimators: 100
   log_production_model:
     cmd: python src/log_production_model.py --config=params.yaml
     deps:
