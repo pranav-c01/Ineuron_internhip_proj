@@ -4,6 +4,7 @@ import numpy as np
 from prediction_service import prediction
 
 
+
 webapp_root = "webapp"
 
 static_dir = os.path.join(webapp_root, "static")
