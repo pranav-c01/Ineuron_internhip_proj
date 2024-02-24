@@ -3,7 +3,7 @@ name: workflow
 on:
   push:
     branches:
-      - main
+      - AWS_EC2_ECR_CI_CD
     paths-ignore:
       - 'README.md'
 
