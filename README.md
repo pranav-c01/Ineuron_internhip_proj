@@ -84,3 +84,7 @@ mlflow server
 ```
 
 mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0 -p 1234
+
+STORY:- 
+
+iam user  create , ecr repo create , EC2 server create in cloud and then do setup for docker in EC2 cmd ,and then copy paste all commands from github actions runner section to set up runner in ec2 
